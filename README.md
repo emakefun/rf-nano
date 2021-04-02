@@ -8,7 +8,7 @@ arduino和无线芯片引脚连接如下
 | D10  | CSN |
 | D11  | MOSI |
 | D12  | MISO |
-| D12  | SCK |
+| D13  | SCK |
 rf-nano已经被占用的D9，D10，D11，D12，D13引脚不能再被复用
 
 
