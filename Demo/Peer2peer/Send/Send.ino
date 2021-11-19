@@ -18,9 +18,9 @@ void WriteData()
 
 void setup() {
   // put your setup code here, to run once:
-  Serial.begin(9600);
+  Serial.begin(115200);
   printf_begin();
-  Serial.println(F("LGT RF-NANO v3.0 Send Test"));
+  Serial.println(F("LGT RF-NANO v2.0 Send Test"));
 
   //
   // Setup and configure rf radio

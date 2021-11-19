@@ -7,11 +7,11 @@ RF24 Radio(9, 10);
 
 void setup() {
   // put your setup code here, to run once:
-  Serial.begin(9600);
+  Serial.begin(115200);
   
   printf_begin();
   Serial.println();
-  Serial.println(F("LGT RF_NANO v3.0 Test"));
+  Serial.println(F("LGT RF_NANO v2.0 Test"));
 
   //
   // Setup and configure rf radio
@@ -29,9 +29,7 @@ void setup() {
   Radio.setPALevel(RF24_PA_MAX);    //MIN power low rage
   Radio.setDataRate(RF24_1MBPS) ;   //Minimum speed
   Serial.println("Setup Initialized");
-
   Radio.printDetails();
-  delay(500);
 }
 
 void loop() {

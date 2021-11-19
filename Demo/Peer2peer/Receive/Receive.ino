@@ -4,33 +4,34 @@
 #include "printf.h"
 RF24 ReceiveRadio (9, 10);
 
-int value;
+byte value[32];
 
 void ReadData()
 {
+  uint8_t bytes;
   if (ReceiveRadio.available())
   {
     while (ReceiveRadio.available())
-    {
-      ReceiveRadio.read(&value, sizeof(value) );
+    { 
+      bytes = ReceiveRadio.getPayloadSize();
+      ReceiveRadio.read(value, bytes);
     }
     Serial.print("ReadData");
     Serial.print(".........");
-    Serial.println(value);
+    Serial.println(value[0]);
   }
 }
 
 void setup() {
   // put your setup code here, to run once:
-  Serial.begin(9600);
+  Serial.begin(115200);
   printf_begin();
-  Serial.println(F("LGT RF-NANO v3.0 Receive Test"));
+  Serial.println(F("LGT RF-NANO v2.0 Receive Test"));
 
   //
   // Setup and configure rf radio
   //
   ReceiveRadio.begin();
-  // ReceiveRadio.setAutoAck(false);
   ReceiveRadio.setAddressWidth(5);
   ReceiveRadio.openReadingPipe(1, 0xF0F0F0F066LL);
   ReceiveRadio.setChannel(115);  //115 band above WIFI signals
