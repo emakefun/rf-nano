@@ -40,7 +40,7 @@ LGT8F328P使用Arduino IDE编程，需要独立的软件支持包支持
 
 本模块的库基于[RF24](https://github.com/maniacbug/RF24)最新版本修改而成，LGT arduino IDE软件支持包已经集成这个库如下，我们可以直接在示例程序里面打开
 
-![arduino_rf-nano_lib](C:\Users\mi\Desktop\nulllab\lgt-rf-nano\Pic\arduino_rf-nano_lib.png)
+![arduino_rf-nano_lib](./Pic/arduino_rf-nano_lib.png)
 
 
 
