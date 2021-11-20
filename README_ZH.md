@@ -1,4 +1,4 @@
-# lgt-rf-nano
+# lgt-rf-nano  [English](./README.md)
 LGT-RF-Nano是基于国产LGT8F328P芯片和NRF24L01+芯片组合而成的一款2.4G通讯的产品
 
 首先我们来回答下面几个核心问题
