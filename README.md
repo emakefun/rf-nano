@@ -44,12 +44,7 @@ The LGT8F328P uses Arduino IDE to program and requires independent software supp
 [**Install the Arduino IDE software packageClick**](https://github.com/nulllaborg/arduino_nulllab)
 
 ## Library instructions
-
-<<<<<<< HEAD
 The library of this module is modified based on the latest version of [RF24](https://github.com/maniacbug/RF24). The LGT arduino IDE software package has integrated this library as shown below, we can open it directly in the sample program.
-=======
-![arduino_rf-nano_lib](./Pic/arduino_rf-nano_lib.png)
->>>>>>> 79352e741186558941b557ccc045b6adc814a7d9
 
 ![arduino_rf-nano_lib](./Pic/arduino_rf-nano_lib.png)
 
