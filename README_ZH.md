@@ -1,6 +1,6 @@
 # lgt-rf-nano  [English](./README.md)
-LGT-RF-Nano是基于国产LGT8F328P芯片和NRF24L01+芯片组合而成的一款2.4G通讯的产品
-
+LGT-RF-Nano是基于国产LGT8F328P芯片(替代Atmega328P)和NRF24L01+芯片组合而成的一款2.4G通讯的产品
+[购买链接](https://item.taobao.com/item.htm?spm=a1z10.5-c-s.w4002-21556097795.32.6f8b6b0d7ct3Mq&id=684585007007)
 首先我们来回答下面几个核心问题
 
 **LGT8F328P是什么？**
