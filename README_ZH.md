@@ -1,25 +1,28 @@
-# RF - Nnao  [English](./README.md)
+# rf-nano  [English](./README.md)
 [购买链接](https://item.taobao.com/item.htm?spm=a1z10.5-c-s.w4002-21556097795.32.6f8b6b0d7ct3Mq&id=684585007007)
 
-![arduino_rf-nano_lib](./Pic/RF-Nano-F.png)
+![arduino_rf-nano_lib](./image/RF-Nano-F.png)
 
 # 简介
 
-​		RF-Nano是集成NRF24L01+无线模块结合Arduino Nano由我司针对创客研发的一款革命性产品。软件兼容 RF24 开源库，可进行功耗传输速率等设置，支持Mixly、Mblock5、Magicblock图像化编程;优化板载天线设传输更远更稳定，可配置外置天线，使用外置天线可传输距离达100M。
+​		rf-nano是emakefun公司基于Arduino NanoV3.0主板集成nrf24L01+无线芯片而开发一款无线开发板 。开发板尺寸，引脚完全兼容标准nanoV3.0开发板，软件兼容[RF24 开源库](https://github.com/maniacbug/RF24) )，可进行功耗，传输速率，频道等设置，支持Mixly、Mblock5、Magicblock图像化编程;优化板载天线设传输距离达30m，板载IPEX贴片天线座，使用外置天线可传输距离达100M。
 
 ## 版本升级点
-|  功能  | RF-NANO (老版本) |RF-NANO (新版本)  |
+|  功能  | RF-NANO (老版本V1.0) |RF-NANO (新版本V3.0)  |
 |  :--:  | :--:  |:--:  |
+| 图片 |  | |
 | USB接口 | Micro USB |Type - C  |
 | 尺寸 | 19 mm x 49 mm |18 mm x 48mm  |
-| D11  | MOSI |----  |
-| USB触点 | 无 |有  |
-| 电源方案 | 老方案 |新方案  |
+| 引脚顺序 | 不兼容 |兼容官方RF24库  |
+| 外置天线 | 无 |有  |
 
+**注**：rf-nano3.0相对于rf-nano除了功能点进行了升级外，PCB设计版图也进行了全新优化，精心布局，除此以外，电源器件和外围器件也全部优化，采样知名元器件原装芯片，大大提升了整体产品的射频性能和产品稳定性。
 
-## 天线切换
+rf-nanoV1.0早已停产，但市面上依然有大量销售的V1.0外形的主板均为克隆版本，做工粗糙，器件很多为翻新物料，质量不可靠，请注意分辨。
 
-![arduino_rf-nano_lib](./Pic/RF-Nano_Antenna2.png)                                                           ![arduino_rf-nano_lib](./Pic/RF-Nano_Antenna1.png)
+## 板载天线和IPEX外置天线切换
+
+![arduino_rf-nano_lib](./image/RF-Nano_Antenna2.png)                                                           ![arduino_rf-nano_lib](./image/RF-Nano_Antenna1.png)
 
 ​						板载天线																												外置天线
 
@@ -27,30 +30,32 @@
 
 
 
+## 引脚标注图
+
+
+
 ## 原理图
 
-[原理图下载](SCH/RF-Nano.pdf)
+[原理图下载](schematic/rf-nano_sch_v3.0.pdf)
 
 
+## 机械尺寸标注
 
-
-## 机械结构图
-
-![arduino_rf-nano_lib](./Pic/RF-Nano_Dimensional_drawing.png)
+![arduino_rf-nano_lib](./image/RF-Nano_Dimensional_drawing.png)
 
   
 
-## arduino和无线芯片引脚连接如下
+## Arduino和nRF24L01+芯片引脚连接如下
 
-|  ATmega328P  | NRF24L01+  |
+|  ATmega328P  | nRF24L01+ |
 |  ----  | ----  |
 | D7 | CE |
 | D8 | CSN |
 | D11  | MOSI |
 | D12  | MISO |
 | D13 | SCK |
-**注 ：rf-nano已经被占用的D7，D8，D11，D12，D13引脚不能再被复用**
 
+**注 ：rf-nano已经被占用的D7，D8，D11，D12，D13引脚不能再被复用**
 
 
 ## CH340G驱动安装
@@ -61,14 +66,10 @@
 
 ## RF24库安装
 
-![arduino_rf-nano_lib](./Pic/RF-Nano_Library_installation_1.png)
+![arduino_rf-nano_lib](./image/RF-Nano_Library_installation_1.png)
 
 
-
-
-
-
-![arduino_rf-nano_lib](./Pic/RF-Nano_Library_installation_2.png)
+![arduino_rf-nano_lib](./image/RF-Nano_Library_installation_2.png)
 
 
 ## 关键函数说明
@@ -306,7 +307,7 @@ void loop() {
 
 ## 一对多测试
 
-![muilt_demo](./Pic/muilt_demo.png)
+![muilt_demo](./image/muilt_demo.png)
 
 方法一: 频道相同，地址不同
 
@@ -318,5 +319,5 @@ void loop() {
 
 ## 联系我们
 
-**技术 + 合作：WX号:  null-lab**
+**技术 + 合作：WX号:  13242991035
 
