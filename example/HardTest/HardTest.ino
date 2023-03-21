@@ -1,13 +1,16 @@
 #include <SPI.h>
 #include <Wire.h>
 #include <RF24.h>
+#include <printf.h>
+
 RF24 Radio(7,8);
 void setup() {
   // put your setup code here, to run once:
   Serial.begin(115200);
-  
+   
+  printf_begin();
   Serial.println();
-  Serial.println(F("RF_NANO v4.0 Test"));
+  Serial.println(F("RF_NANO v3.0 Test"));
   //
   // Setup and configure rf radio
   //

@@ -1,6 +1,7 @@
 #include <SPI.h>
 #include<Wire.h>
 #include <RF24.h>
+#include <printf.h>
 RF24 ReceiveRadio (7, 8);
 
 byte value[32];
@@ -24,7 +25,8 @@ void ReadData()
 void setup() {
   // put your setup code here, to run once:
   Serial.begin(115200);
-  Serial.println(F("RF-NANO v4.0 Receive Test"));
+  printf_begin();
+  Serial.println(F("RF-NANO v3.0 Receive Test"));
 
   //
   // Setup and configure rf radio

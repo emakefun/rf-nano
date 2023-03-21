@@ -1,6 +1,7 @@
 #include <SPI.h>
 #include <Wire.h>
 #include <RF24.h>
+#include <printf.h>
 RF24 SendRadio(7,8);
 
 int value;
@@ -18,7 +19,8 @@ void WriteData()
 void setup() {
   // put your setup code here, to run once:
   Serial.begin(115200);
-  Serial.println(F("RF-NANO v4.0 Send Test"));
+  printf_begin();
+  Serial.println(F("RF-NANO v3.0 Send Test"));
 
   //
   // Setup and configure rf radio

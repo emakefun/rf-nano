@@ -5,15 +5,18 @@
 
 # 简介
 
-​		rf-nano是emakefun公司基于Arduino NanoV3.0主板集成nrf24L01+无线芯片而开发一款无线开发板 。开发板尺寸，引脚完全兼容标准nanoV3.0开发板，软件兼容[RF24 开源库](https://github.com/maniacbug/RF24) )，可进行功耗，传输速率，频道等设置，支持Mixly、Mblock5、Magicblock图像化编程;优化板载天线设传输距离达30m，板载IPEX贴片天线座，使用外置天线可传输距离达100M。
+​		rf-nano是emakefun公司基于Arduino Nano V3.0主板集成nrf24L01+无线芯片而开发一款无线开发板 。开发板尺寸，引脚完全兼容标准nanoV3.0开发板，软件兼容[RF24 开源库](https://github.com/maniacbug/RF24) )，可进行功耗，传输速率，频道等设置，支持Mixly、Mblock5、Magicblock图像化编程;优化板载天线设传输距离达30m，板载IPEX贴片天线座，使用外置天线传输距离可达100m。
+
+（需要放一张nrf24L01+模块 + NanoV3.0 = RF-Nano的图片）
 
 ## 版本升级点
 |  功能  | RF-NANO (老版本V1.0) |RF-NANO (新版本V3.0)  |
 |  :--:  | :--:  |:--:  |
-| 图片 |  | |
+| 实拍图 | ![rf-nano_v1.0](./image/rf-nano_v1.0.png) | |
+| 主控芯片 | Atmega328P-MU | Atmega328P-AU |
 | USB接口 | Micro USB |Type - C  |
 | 尺寸 | 19 mm x 49 mm |18 mm x 48mm  |
-| 引脚顺序 | 不兼容 |兼容官方RF24库  |
+| 引脚顺序 | 不兼容RF24库(10，9，11，12，13) |兼容RF24库(7，8，11，12，13)  |
 | 外置天线 | 无 |有  |
 
 **注**：rf-nano3.0相对于rf-nano除了功能点进行了升级外，PCB设计版图也进行了全新优化，精心布局，除此以外，电源器件和外围器件也全部优化，采样知名元器件原装芯片，大大提升了整体产品的射频性能和产品稳定性。
@@ -37,6 +40,8 @@ rf-nanoV1.0早已停产，但市面上依然有大量销售的V1.0外形的主�
 ## 原理图
 
 [原理图下载](schematic/rf-nano_sch_v3.0.pdf)
+
+![RF-Nano-schematic](./image/RF-Nano-schematic.png)
 
 
 ## 机械尺寸标注
@@ -62,14 +67,15 @@ rf-nanoV1.0早已停产，但市面上依然有大量销售的V1.0外形的主�
 
 [CH340G驱动下载链接](https://www.wch.cn/downloads/CH341SER_ZIP.html)
 
-
-
 ## RF24库安装
 
 ![arduino_rf-nano_lib](./image/RF-Nano_Library_installation_1.png)
 
-
 ![arduino_rf-nano_lib](./image/RF-Nano_Library_installation_2.png)
+
+### RF-Nano主板选择
+
+![ide_downloard](./image/ide_downloard.png)
 
 
 ## 关键函数说明
@@ -174,11 +180,13 @@ nrf2401只有一个射频模块，任意时候只能接收一份数据。
 #include <SPI.h>
 #include <Wire.h>
 #include <RF24.h>
+#include <printf.h>
+
 RF24 Radio(7,8);
 void setup() {
   // put your setup code here, to run once:
   Serial.begin(115200);
-  
+  printf_begin();
   Serial.println();
   Serial.println(F("RF_NANO v3.0 Test"));
   //
@@ -210,6 +218,7 @@ void setup() {
 #include <SPI.h>
 #include <Wire.h>
 #include <RF24.h>
+#include <printf.h>
 RF24 SendRadio(7,8);
 
 int value;
@@ -227,6 +236,7 @@ void WriteData()
 void setup() {
   // put your setup code here, to run once:
   Serial.begin(115200);
+  printf_begin();
   Serial.println(F("RF-NANO v4.0 Send Test"));
 
   //
@@ -258,6 +268,8 @@ void loop() {
 #include <SPI.h>
 #include<Wire.h>
 #include <RF24.h>
+#include <printf.h>
+
 RF24 ReceiveRadio (7, 8);
 
 byte value[32];
@@ -281,6 +293,7 @@ void ReadData()
 void setup() {
   // put your setup code here, to run once:
   Serial.begin(115200);
+  printf_begin();
   Serial.println(F("RF-NANO v4.0 Receive Test"));
 
   //
