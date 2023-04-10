@@ -1,4 +1,4 @@
-# RF - Nnao  [English](./README.md)
+# RF - Nano  [English](./README.md)
 [购买链接](https://item.taobao.com/item.htm?spm=a1z10.5-c-s.w4002-21556097795.32.6f8b6b0d7ct3Mq&id=684585007007)
 
 ![arduino_rf-nano_lib](./Pic/RF-Nano-F.png)
