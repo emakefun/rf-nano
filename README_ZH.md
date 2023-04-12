@@ -1,23 +1,41 @@
 # rf-nano  [English](./README.md)
-[购买链接](https://item.taobao.com/item.htm?spm=a1z10.5-c-s.w4002-21556097795.32.6f8b6b0d7ct3Mq&id=684585007007)
+[**淘宝购买链接**](https://item.taobao.com/item.htm?spm=a1z10.5-c-s.w4002-21556097795.46.48b06b0dlTXdBo&id=691950057500 )
 
-![arduino_rf-nano_lib](./image/RF-Nano-F.png)
+![rf-nano](./image/rf-nano.png)
 
 # 简介
 
-​		rf-nano是emakefun公司基于Arduino Nano V3.0主板集成nrf24L01+无线芯片而开发一款无线开发板 。开发板尺寸，引脚完全兼容标准nanoV3.0开发板，软件兼容[RF24 开源库](https://github.com/maniacbug/RF24) )，可进行功耗，传输速率，频道等设置，支持Mixly、Mblock5、Magicblock图像化编程;优化板载天线设传输距离达30m，板载IPEX贴片天线座，使用外置天线传输距离可达100m。
+​		rf-nano是emakefun公司基于官方标准Arduino Nano V3.0主板集成nrf24L01+无线芯片而开发一款2.4G无线开发板 。它的尺寸，引脚完全兼容标准nanoV3.0开发板，直接兼容[RF24 开源库](https://github.com/maniacbug/RF24)，可进行功耗，传输速率，频道等设置，支持Mixly、Mblock5、Magicblock图像化编程;优化板载天线设传输距离达30m，板载IPEX贴片天线座，使用外置天线传输距离可达100m。
 
-（需要放一张nrf24L01+模块 + NanoV3.0 = RF-Nano的图片）
+![rf-nano_nrf24L01+](./image/rf-nano_nrf24L01+.png)
+
+### 主要技术参数
+
+- 处理器:ATmega328P-AU 
+- 工作电压:5V建议  VIN输入电压:6V ~ 15V
+- 数字IO引脚:22个(其中6个用作PWM输出)
+- 模拟输入引脚:8 (A0~A7) 
+- IO引脚直流电流:40mA 
+- 5V 引脚电流：VIN输入时1000mA
+- 3.3V引脚电流 :  50mA
+- Flash内存:32KB(其中0.5KB用于引导加载程序) 
+- SRAM: 2KB
+- EEPROM: 1KB
+- USB转串口芯片: CH340G芯片 外置晶振 
+- 工作时钟:16 MHZ
 
 ## 版本升级点
-|  功能  | RF-NANO (老版本V1.0) |RF-NANO (新版本V3.0)  |
-|  :--:  | :--:  |:--:  |
-| 实拍图 | ![rf-nano_v1.0](./image/rf-nano_v1.0.png) | |
-| 主控芯片 | Atmega328P-MU | Atmega328P-AU |
-| USB接口 | Micro USB |Type - C  |
-| 尺寸 | 19 mm x 49 mm |18 mm x 48mm  |
-| 引脚顺序 | 不兼容RF24库(10，9，11，12，13) |兼容RF24库(7，8，11，12，13)  |
-| 外置天线 | 无 |有  |
+
+NanoV3.0，rf-nanoV1.0，RF-NANOV3.0三个产品参数对比
+
+|  功能  | NANO   3.0 | RF-NANO (老版本V1.0) |RF-NANO (新版本V3.0)  |
+|  :--:  | :--:  |:--:  |:--:  |
+| 实拍图 | <img src="./image/nano3.0.png"  style="zoom: 50%;" /> | <img src="./image/rf-nano_v1.0.png"  style="zoom: 56%;" /> | <img src="./image/rf-nano.png" style="zoom:56%;"/> |
+| 主控芯片 | ATmega328P-AU | ATmega328P-MU | ATmega328PB-AU |
+| USB接口 | Mini USB | Micro USB |Type-C  |
+| 尺寸 | 18mm x 45mm | 19mm x 49mm |18mm x 48mm  |
+| 引脚顺序 | - | 不兼容RF24库(10，9，11，12，13) |兼容RF24库(7，8，11，12，13)  |
+| 外置天线 | - | 无 |有  |
 
 **注**：rf-nano3.0相对于rf-nano除了功能点进行了升级外，PCB设计版图也进行了全新优化，精心布局，除此以外，电源器件和外围器件也全部优化，采样知名元器件原装芯片，大大提升了整体产品的射频性能和产品稳定性。
 
@@ -328,9 +346,19 @@ void loop() {
 
 方法二 地址相同，频道不同
 
+### 图像化编程软件支持
 
+#### Mixly
+
+#### MagicBlock
+
+#### Mblock5
+
+#### Mind+
+
+开发中......
 
 ## 联系我们
 
-**技术 + 合作：WX号:  13242991035
+**技术+合作**  wechat号: jundi0808(ken@emakefun.com)
 
