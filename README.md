@@ -1,5 +1,5 @@
 # rf-nano  [中文版](./README_ZH.md)
-[**Taobao purchase link**](https://item.taobao.com/item.htm?spm=a1z10.5-c-s.w4002-21556097795.46.48b06b0dlTXdBo&id=691950057500 )
+[**AliExpress purchase link**](https://www.aliexpress.com/item/1005005472547279.html?pdp_npi=3%40dis%21USD%21US%20%245.25%21US%20%244.93%21%21%21%21%21%4021038dc816846695615375838d035d%2112000033220158732%21sh01%21CN%212613261194&spm=a2g0o.store_pc_home.productList_2005072051256.subject_1&gatewayAdapt=4itemAdapt )
 
 ![rf-nano](./image/rf-nano.png)
 
