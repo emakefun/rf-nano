@@ -34,7 +34,7 @@ It is a module based on the LGT8F328P main control chip combined with the 2.4G w
 | D10  | CSN |
 | D11  | MOSI |
 | D12  | MISO |
-| D13 | S |
+| D13 | SCK |
 |D9, D10, D11, D12, D13 pins occupied by rf-nano itself cannot be reused||
 
 ## Arduino IDE software package
