@@ -1,0 +1,693 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+
+<link href='https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext' rel='stylesheet' type='text/css' /><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color:#ffffff; --text-color:#333333; --select-text-bg-color:#B5D6FC; --select-text-font-color:auto; --monospace:"Lucida Console",Consolas,"Courier",monospace; --title-bar-height:20px; }
+.mac-os-11 { --title-bar-height:28px; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+body { margin: 0px; padding: 0px; height: auto; inset: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; tab-size: 4; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; overflow-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 36px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+.typora-export .task-list-item input { pointer-events: none; }
+@media screen and (max-width: 500px) {
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; image-orientation: from-image; }
+button, input, select, textarea { color: inherit; font: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 4; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px; }
+thead, tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right: 0px; background-color: inherit; }
+.CodeMirror-linenumber { user-select: none; }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background: inherit; position: relative !important; }
+.md-fences-adv-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+svg { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: 0px 0px; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; -webkit-tap-highlight-color: transparent; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li blockquote { margin: 1rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print {
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
+  #write { margin-top: 0px; padding-top: 0px; border-color: transparent !important; padding-bottom: 0px !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  .typora-export #write { break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+  .is-mac table { break-inside: avoid; }
+  .typora-export-show-outline .typora-export-sidebar { display: none; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+#write.first-line-indent p > .md-image:only-child:not(.md-img-error) img { left: -2em; position: relative; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+.MathJax_ref { fill: currentcolor; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) {
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.reversefootnote { font-family: ui-monospace, sans-serif; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.6; font-family: var(--monospace); }
+code { text-align: left; vertical-align: initial; }
+a.md-print-anchor { white-space: pre !important; border-width: initial !important; border-style: none !important; border-color: initial !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; background: 0px 0px !important; text-decoration: initial !important; text-shadow: initial !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+mark { background: rgb(255, 255, 0); color: rgb(0, 0, 0); }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+.md-expand mark .md-meta { opacity: 0.3 !important; }
+mark .md-meta { color: rgb(0, 0, 0); }
+@media print {
+  .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 { break-inside: avoid; }
+}
+.md-diagram-panel .messageText { stroke: none !important; }
+.md-diagram-panel .start-state { fill: var(--node-fill); }
+.md-diagram-panel .edgeLabel rect { opacity: 1 !important; }
+.md-fences.md-fences-math { font-size: 1em; }
+.md-fences-advanced:not(.md-focus) { padding: 0px; white-space: nowrap; border: 0px; }
+.md-fences-advanced:not(.md-focus) { background: inherit; }
+.typora-export-show-outline .typora-export-content { max-width: 1440px; margin: auto; display: flex; flex-direction: row; }
+.typora-export-sidebar { width: 300px; font-size: 0.8rem; margin-top: 80px; margin-right: 18px; }
+.typora-export-show-outline #write { --webkit-flex:2; flex: 2 1 0%; }
+.typora-export-sidebar .outline-content { position: fixed; top: 0px; max-height: 100%; overflow: hidden auto; padding-bottom: 30px; padding-top: 60px; width: 300px; }
+@media screen and (max-width: 1024px) {
+  .typora-export-sidebar, .typora-export-sidebar .outline-content { width: 240px; }
+}
+@media screen and (max-width: 800px) {
+  .typora-export-sidebar { display: none; }
+}
+.outline-content li, .outline-content ul { margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px; list-style: none; }
+.outline-content ul { margin-top: 0px; margin-bottom: 0px; }
+.outline-content strong { font-weight: 400; }
+.outline-expander { width: 1rem; height: 1.42857rem; position: relative; display: table-cell; vertical-align: middle; cursor: pointer; padding-left: 4px; }
+.outline-expander::before { content: ""; position: relative; font-family: Ionicons; display: inline-block; font-size: 8px; vertical-align: middle; }
+.outline-item { padding-top: 3px; padding-bottom: 3px; cursor: pointer; }
+.outline-expander:hover::before { content: ""; }
+.outline-h1 > .outline-item { padding-left: 0px; }
+.outline-h2 > .outline-item { padding-left: 1em; }
+.outline-h3 > .outline-item { padding-left: 2em; }
+.outline-h4 > .outline-item { padding-left: 3em; }
+.outline-h5 > .outline-item { padding-left: 4em; }
+.outline-h6 > .outline-item { padding-left: 5em; }
+.outline-label { cursor: pointer; display: table-cell; vertical-align: middle; text-decoration: none; color: inherit; }
+.outline-label:hover { text-decoration: underline; }
+.outline-item:hover { border-color: rgb(245, 245, 245); background-color: var(--item-hover-bg-color); }
+.outline-item:hover { margin-left: -28px; margin-right: -28px; border-left: 28px solid transparent; border-right: 28px solid transparent; }
+.outline-item-single .outline-expander::before, .outline-item-single .outline-expander:hover::before { display: none; }
+.outline-item-open > .outline-item > .outline-expander::before { content: ""; }
+.outline-children { display: none; }
+.info-panel-tab-wrapper { display: none; }
+.outline-item-open > .outline-children { display: block; }
+.typora-export .outline-item { padding-top: 1px; padding-bottom: 1px; }
+.typora-export .outline-item:hover { margin-right: -8px; border-right: 8px solid transparent; }
+.typora-export .outline-expander::before { content: "+"; font-family: inherit; top: -1px; }
+.typora-export .outline-expander:hover::before, .typora-export .outline-item-open > .outline-item > .outline-expander::before { content: "−"; }
+.typora-export-collapse-outline .outline-children { display: none; }
+.typora-export-collapse-outline .outline-item-open > .outline-children, .typora-export-no-collapse-outline .outline-children { display: block; }
+.typora-export-no-collapse-outline .outline-expander::before { content: "" !important; }
+.typora-export-show-outline .outline-item-active > .outline-item .outline-label { font-weight: 700; }
+.md-inline-math-container mjx-container { zoom: 0.95; }
+mjx-container { break-inside: avoid; }
+
+
+.CodeMirror { height: auto; }
+.CodeMirror.cm-s-inner { background: inherit; }
+.CodeMirror-scroll { overflow: auto hidden; z-index: 3; }
+.CodeMirror-gutter-filler, .CodeMirror-scrollbar-filler { background-color: rgb(255, 255, 255); }
+.CodeMirror-gutters { border-right: 1px solid rgb(221, 221, 221); background: inherit; white-space: nowrap; }
+.CodeMirror-linenumber { padding: 0px 3px 0px 5px; text-align: right; color: rgb(153, 153, 153); }
+.cm-s-inner .cm-keyword { color: rgb(119, 0, 136); }
+.cm-s-inner .cm-atom, .cm-s-inner.cm-atom { color: rgb(34, 17, 153); }
+.cm-s-inner .cm-number { color: rgb(17, 102, 68); }
+.cm-s-inner .cm-def { color: rgb(0, 0, 255); }
+.cm-s-inner .cm-variable { color: rgb(0, 0, 0); }
+.cm-s-inner .cm-variable-2 { color: rgb(0, 85, 170); }
+.cm-s-inner .cm-variable-3 { color: rgb(0, 136, 85); }
+.cm-s-inner .cm-string { color: rgb(170, 17, 17); }
+.cm-s-inner .cm-property { color: rgb(0, 0, 0); }
+.cm-s-inner .cm-operator { color: rgb(152, 26, 26); }
+.cm-s-inner .cm-comment, .cm-s-inner.cm-comment { color: rgb(170, 85, 0); }
+.cm-s-inner .cm-string-2 { color: rgb(255, 85, 0); }
+.cm-s-inner .cm-meta { color: rgb(85, 85, 85); }
+.cm-s-inner .cm-qualifier { color: rgb(85, 85, 85); }
+.cm-s-inner .cm-builtin { color: rgb(51, 0, 170); }
+.cm-s-inner .cm-bracket { color: rgb(153, 153, 119); }
+.cm-s-inner .cm-tag { color: rgb(17, 119, 0); }
+.cm-s-inner .cm-attribute { color: rgb(0, 0, 204); }
+.cm-s-inner .cm-header, .cm-s-inner.cm-header { color: rgb(0, 0, 255); }
+.cm-s-inner .cm-quote, .cm-s-inner.cm-quote { color: rgb(0, 153, 0); }
+.cm-s-inner .cm-hr, .cm-s-inner.cm-hr { color: rgb(153, 153, 153); }
+.cm-s-inner .cm-link, .cm-s-inner.cm-link { color: rgb(0, 0, 204); }
+.cm-negative { color: rgb(221, 68, 68); }
+.cm-positive { color: rgb(34, 153, 34); }
+.cm-header, .cm-strong { font-weight: 700; }
+.cm-del { text-decoration: line-through; }
+.cm-em { font-style: italic; }
+.cm-link { text-decoration: underline; }
+.cm-error { color: red; }
+.cm-invalidchar { color: red; }
+.cm-constant { color: rgb(38, 139, 210); }
+.cm-defined { color: rgb(181, 137, 0); }
+div.CodeMirror span.CodeMirror-matchingbracket { color: rgb(0, 255, 0); }
+div.CodeMirror span.CodeMirror-nonmatchingbracket { color: rgb(255, 34, 34); }
+.cm-s-inner .CodeMirror-activeline-background { background: inherit; }
+.CodeMirror { position: relative; overflow: hidden; }
+.CodeMirror-scroll { height: 100%; outline: 0px; position: relative; box-sizing: content-box; background: inherit; }
+.CodeMirror-sizer { position: relative; }
+.CodeMirror-gutter-filler, .CodeMirror-hscrollbar, .CodeMirror-scrollbar-filler, .CodeMirror-vscrollbar { position: absolute; z-index: 6; display: none; outline: 0px; }
+.CodeMirror-vscrollbar { right: 0px; top: 0px; overflow: hidden; }
+.CodeMirror-hscrollbar { bottom: 0px; left: 0px; overflow: auto hidden; }
+.CodeMirror-scrollbar-filler { right: 0px; bottom: 0px; }
+.CodeMirror-gutter-filler { left: 0px; bottom: 0px; }
+.CodeMirror-gutters { position: absolute; left: 0px; top: 0px; padding-bottom: 10px; z-index: 3; overflow-y: hidden; }
+.CodeMirror-gutter { white-space: normal; height: 100%; box-sizing: content-box; padding-bottom: 30px; margin-bottom: -32px; display: inline-block; }
+.CodeMirror-gutter-wrapper { position: absolute; z-index: 4; background: 0px 0px !important; border: none !important; }
+.CodeMirror-gutter-background { position: absolute; top: 0px; bottom: 0px; z-index: 4; }
+.CodeMirror-gutter-elt { position: absolute; cursor: default; z-index: 4; }
+.CodeMirror-lines { cursor: text; }
+.CodeMirror pre { border-radius: 0px; border-width: 0px; background: 0px 0px; font-family: inherit; font-size: inherit; margin: 0px; white-space: pre; overflow-wrap: normal; color: inherit; z-index: 2; position: relative; overflow: visible; }
+.CodeMirror-wrap pre { overflow-wrap: break-word; white-space: pre-wrap; word-break: normal; }
+.CodeMirror-code pre { border-right: 30px solid transparent; width: fit-content; }
+.CodeMirror-wrap .CodeMirror-code pre { border-right: none; width: auto; }
+.CodeMirror-linebackground { position: absolute; inset: 0px; z-index: 0; }
+.CodeMirror-linewidget { position: relative; z-index: 2; overflow: auto; }
+.CodeMirror-wrap .CodeMirror-scroll { overflow-x: hidden; }
+.CodeMirror-measure { position: absolute; width: 100%; height: 0px; overflow: hidden; visibility: hidden; }
+.CodeMirror-measure pre { position: static; }
+.CodeMirror div.CodeMirror-cursor { position: absolute; visibility: hidden; border-right: none; width: 0px; }
+.CodeMirror div.CodeMirror-cursor { visibility: hidden; }
+.CodeMirror-focused div.CodeMirror-cursor { visibility: inherit; }
+.cm-searching { background: rgba(255, 255, 0, 0.4); }
+span.cm-underlined { text-decoration: underline; }
+span.cm-strikethrough { text-decoration: line-through; }
+.cm-tw-syntaxerror { color: rgb(255, 255, 255); background-color: rgb(153, 0, 0); }
+.cm-tw-deleted { text-decoration: line-through; }
+.cm-tw-header5 { font-weight: 700; }
+.cm-tw-listitem:first-child { padding-left: 10px; }
+.cm-tw-box { border-style: solid; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-color: inherit; border-top-width: 0px !important; }
+.cm-tw-underline { text-decoration: underline; }
+@media print {
+  .CodeMirror div.CodeMirror-cursor { visibility: hidden; }
+}
+
+
+:root {
+    --side-bar-bg-color: #fafafa;
+    --control-text-color: #777;
+}
+
+@include-when-export url(https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext);
+
+/* open-sans-regular - latin-ext_latin */
+  /* open-sans-italic - latin-ext_latin */
+    /* open-sans-700 - latin-ext_latin */
+    /* open-sans-700italic - latin-ext_latin */
+  html {
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+}
+
+body {
+    font-family: "Open Sans","Clear Sans", "Helvetica Neue", Helvetica, Arial, 'Segoe UI Emoji', sans-serif;
+    color: rgb(51, 51, 51);
+    line-height: 1.6;
+}
+
+#write {
+    max-width: 860px;
+  	margin: 0 auto;
+  	padding: 30px;
+    padding-bottom: 100px;
+}
+
+@media only screen and (min-width: 1400px) {
+	#write {
+		max-width: 1024px;
+	}
+}
+
+@media only screen and (min-width: 1800px) {
+	#write {
+		max-width: 1200px;
+	}
+}
+
+#write > ul:first-child,
+#write > ol:first-child{
+    margin-top: 30px;
+}
+
+a {
+    color: #4183C4;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    position: relative;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    line-height: 1.4;
+    cursor: text;
+}
+h1:hover a.anchor,
+h2:hover a.anchor,
+h3:hover a.anchor,
+h4:hover a.anchor,
+h5:hover a.anchor,
+h6:hover a.anchor {
+    text-decoration: none;
+}
+h1 tt,
+h1 code {
+    font-size: inherit;
+}
+h2 tt,
+h2 code {
+    font-size: inherit;
+}
+h3 tt,
+h3 code {
+    font-size: inherit;
+}
+h4 tt,
+h4 code {
+    font-size: inherit;
+}
+h5 tt,
+h5 code {
+    font-size: inherit;
+}
+h6 tt,
+h6 code {
+    font-size: inherit;
+}
+h1 {
+    font-size: 2.25em;
+    line-height: 1.2;
+    border-bottom: 1px solid #eee;
+}
+h2 {
+    font-size: 1.75em;
+    line-height: 1.225;
+    border-bottom: 1px solid #eee;
+}
+
+/*@media print {
+    .typora-export h1,
+    .typora-export h2 {
+        border-bottom: none;
+        padding-bottom: initial;
+    }
+
+    .typora-export h1::after,
+    .typora-export h2::after {
+        content: "";
+        display: block;
+        height: 100px;
+        margin-top: -96px;
+        border-top: 1px solid #eee;
+    }
+}*/
+
+h3 {
+    font-size: 1.5em;
+    line-height: 1.43;
+}
+h4 {
+    font-size: 1.25em;
+}
+h5 {
+    font-size: 1em;
+}
+h6 {
+   font-size: 1em;
+    color: #777;
+}
+p,
+blockquote,
+ul,
+ol,
+dl,
+table{
+    margin: 0.8em 0;
+}
+li>ol,
+li>ul {
+    margin: 0 0;
+}
+hr {
+    height: 2px;
+    padding: 0;
+    margin: 16px 0;
+    background-color: #e7e7e7;
+    border: 0 none;
+    overflow: hidden;
+    box-sizing: content-box;
+}
+
+li p.first {
+    display: inline-block;
+}
+ul,
+ol {
+    padding-left: 30px;
+}
+ul:first-child,
+ol:first-child {
+    margin-top: 0;
+}
+ul:last-child,
+ol:last-child {
+    margin-bottom: 0;
+}
+blockquote {
+    border-left: 4px solid #dfe2e5;
+    padding: 0 15px;
+    color: #777777;
+}
+blockquote blockquote {
+    padding-right: 0;
+}
+table {
+    padding: 0;
+    word-break: initial;
+}
+table tr {
+    border: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 0;
+}
+table tr:nth-child(2n),
+thead {
+    background-color: #f8f8f8;
+}
+table th {
+    font-weight: bold;
+    border: 1px solid #dfe2e5;
+    border-bottom: 0;
+    margin: 0;
+    padding: 6px 13px;
+}
+table td {
+    border: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 6px 13px;
+}
+table th:first-child,
+table td:first-child {
+    margin-top: 0;
+}
+table th:last-child,
+table td:last-child {
+    margin-bottom: 0;
+}
+
+.CodeMirror-lines {
+    padding-left: 4px;
+}
+
+.code-tooltip {
+    box-shadow: 0 1px 1px 0 rgba(0,28,36,.3);
+    border-top: 1px solid #eef2f2;
+}
+
+.md-fences,
+code,
+tt {
+    border: 1px solid #e7eaed;
+    background-color: #f8f8f8;
+    border-radius: 3px;
+    padding: 0;
+    padding: 2px 4px 0px 4px;
+    font-size: 0.9em;
+}
+
+code {
+    background-color: #f3f4f4;
+    padding: 0 2px 0 2px;
+}
+
+.md-fences {
+    margin-bottom: 15px;
+    margin-top: 15px;
+    padding-top: 8px;
+    padding-bottom: 6px;
+}
+
+
+.md-task-list-item > input {
+  margin-left: -1.3em;
+}
+
+@media print {
+    html {
+        font-size: 13px;
+    }
+    pre {
+        page-break-inside: avoid;
+        word-wrap: break-word;
+    }
+}
+
+.md-fences {
+	background-color: #f8f8f8;
+}
+#write pre.md-meta-block {
+	padding: 1rem;
+    font-size: 85%;
+    line-height: 1.45;
+    background-color: #f7f7f7;
+    border: 0;
+    border-radius: 3px;
+    color: #777777;
+    margin-top: 0 !important;
+}
+
+.mathjax-block>.code-tooltip {
+	bottom: .375rem;
+}
+
+.md-mathjax-midline {
+    background: #fafafa;
+}
+
+#write>h3.md-focus:before{
+	left: -1.5625rem;
+	top: .375rem;
+}
+#write>h4.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h5.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h6.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+.md-image>.md-meta {
+    /*border: 1px solid #ddd;*/
+    border-radius: 3px;
+    padding: 2px 0px 0px 4px;
+    font-size: 0.9em;
+    color: inherit;
+}
+
+.md-tag {
+    color: #a7a7a7;
+    opacity: 1;
+}
+
+.md-toc { 
+    margin-top:20px;
+    padding-bottom:20px;
+}
+
+.sidebar-tabs {
+    border-bottom: none;
+}
+
+#typora-quick-open {
+    border: 1px solid #ddd;
+    background-color: #f8f8f8;
+}
+
+#typora-quick-open-item {
+    background-color: #FAFAFA;
+    border-color: #FEFEFE #e5e5e5 #e5e5e5 #eee;
+    border-style: solid;
+    border-width: 1px;
+}
+
+/** focus mode */
+.on-focus-mode blockquote {
+    border-left-color: rgba(85, 85, 85, 0.12);
+}
+
+header, .context-menu, .megamenu-content, footer{
+    font-family: "Segoe UI", "Arial", sans-serif;
+}
+
+.file-node-content:hover .file-node-icon,
+.file-node-content:hover .file-node-open-state{
+    visibility: visible;
+}
+
+.mac-seamless-mode #typora-sidebar {
+    background-color: #fafafa;
+    background-color: var(--side-bar-bg-color);
+}
+
+.md-lang {
+    color: #b4654d;
+}
+
+/*.html-for-mac {
+    --item-hover-bg-color: #E6F0FE;
+}*/
+
+#md-notification .btn {
+    border: 0;
+}
+
+.dropdown-menu .divider {
+    border-color: #e5e5e5;
+    opacity: 0.4;
+}
+
+.ty-preferences .window-content {
+    background-color: #fafafa;
+}
+
+.ty-preferences .nav-group-item.active {
+    color: white;
+    background: #999;
+}
+
+.menu-item-container a.menu-style-btn {
+    background-color: #f5f8fa;
+    background-image: linear-gradient( 180deg , hsla(0, 0%, 100%, 0.8), hsla(0, 0%, 100%, 0)); 
+}
+
+
+
+</style><title>README</title>
+</head>
+<body class='typora-export os-windows'><div class='typora-export-content'>
+<div id='write'  class=''><h1 id='rf-nano--中文版'><span>rf-nano  </span><a href='./README_ZH.md'><span>中文版</span></a></h1><p><a href='https://www.aliexpress.com/item/1005005472547279.html?pdp_npi=3%40dis%21USD%21US%20%245.25%21US%20%244.93%21%21%21%21%21%4021038dc816846695615375838d035d%2112000033220158732%21sh01%21CN%212613261194&amp;spm=a2g0o.store_pc_home.productList_2005072051256.subject_1&amp;gatewayAdapt=4itemAdapt'><strong><span>AliExpress purchase link</span></strong></a></p><p><img src="./image/rf-nano.png" referrerpolicy="no-referrer" alt="rf-nano"></p><h1 id='introduction'><span>Introduction</span></h1><p><span>		</span><span>rf-nano is a 2.4G wireless development board developed by emakefun company, integrating the nrf24L01+ wireless chip based on the official standard Arduino Nano V3.0 motherboard. Its size and pins are fully compatible with the standard Nano V3.0 development board, directly compatible with the</span><a href='https://github.com/maniacbug/RF24'><span>RF24 open source library</span></a><span>,can be set for power consumption, transmission rate, channel, etc., and supports Mixly, Mblock5, Magicblock visual programming. The onboard antenna is optimized for transmission distance up to 30m, with a onboard IPEX patch antenna socket, and an external antenna can achieve a transmission distance of up to 100m.</span></p><p><img src="./image/rf-nano_nrf24L01+.png" referrerpolicy="no-referrer" alt="rf-nano_nrf24L01+"></p><h3 id='main-technical-parameters'><span>Main Technical Parameters</span></h3><ul><li><span>Processor:ATmega328P-AU </span></li><li><span>Operating Voltage: 5V recommended, VIN Input Voltage: 6V ~ 15V</span></li><li><span>Digital I/O Pins: 22 (6 of which are used for PWM output)</span></li><li><span>Analog Input Pins: 8 (A0~A7).</span></li><li><span>DC Current of I/O Pin:40mA </span></li><li><span>Current of 5V Pin: 1000mA when VIN is connected.</span></li><li><span>Current of by 3.3V Pin: 50mA.</span></li><li><span>Flash Memory: 32KB (with 0.5KB dedicated to bootloading program). </span></li><li><span>SRAM: 2KB</span></li><li><span>EEPROM: 1KB</span></li><li><span>USB to Serial Chip: CH340G with external crystal.</span></li><li><span>Clock Speed: 16 MHz</span></li></ul><h2 id='upgrade-points-for-the-version'><span>Upgrade points for the version</span></h2><p><span>Comparison of product parameters between Nano V3.0, RF-Nano V1.0, and RF-Nano V3.0</span></p><figure><table><thead><tr><th style='text-align:center;' ><span>Function</span></th><th style='text-align:center;' ><span>NANO   3.0</span></th><th style='text-align:center;' ><span>RF-NANO (Old version V1.0)</span></th><th style='text-align:center;' ><span>RF-NANO (New version V3.0)</span></th></tr></thead><tbody><tr><td style='text-align:center;' ><span>product picture</span></td><td style='text-align:center;' ><img src="./image/nano3.0.png"  style="zoom: 50%;" /></td><td style='text-align:center;' ><img src="./image/rf-nano_v1.0.png"  style="zoom: 56%;" /></td><td style='text-align:center;' ><img src="./image/rf-nano.png" style="zoom:56%;"/></td></tr><tr><td style='text-align:center;' ><span>Main control chip</span></td><td style='text-align:center;' ><span>ATmega328P-AU</span></td><td style='text-align:center;' ><span>ATmega328P-MU</span></td><td style='text-align:center;' ><span>ATmega328PB-AU</span></td></tr><tr><td style='text-align:center;' ><span>USB interface</span></td><td style='text-align:center;' ><span>Mini USB</span></td><td style='text-align:center;' ><span>Micro USB</span></td><td style='text-align:center;' ><span>Type-C</span></td></tr><tr><td style='text-align:center;' ><span>Size</span></td><td style='text-align:center;' ><span>18mm x 45mm</span></td><td style='text-align:center;' ><span>19mm x 49mm</span></td><td style='text-align:center;' ><span>18mm x 48mm</span></td></tr><tr><td style='text-align:center;' ><span>Pin sequence</span></td><td style='text-align:center;' ><span>-</span></td><td style='text-align:center;' ><span>Not compatible with RF24 library(10，9，11，12，13)</span></td><td style='text-align:center;' ><span>Compatible with RF24 library(7，8，11，12，13)</span></td></tr><tr><td style='text-align:center;' ><span>External antenna</span></td><td style='text-align:center;' ><span>-</span></td><td style='text-align:center;' ><span>None</span></td><td style='text-align:center;' ><span>Yes</span></td></tr></tbody></table></figure><p><strong><span>Note</span></strong><span>：Besides upgrading the functional points, the PCB layout of rf-nano 3.0 has also been newly optimized with careful arrangement. In addition, the power devices and peripheral devices have also been fully optimized, using well-known original chips to greatly improve the overall RF performance and product stability.</span></p><p><span>rf-nano V1.0 has long been discontinued, but there are still many V1.0-shaped boards on the market that are all clone versions with rough workmanship and many refurbished materials. The quality is unreliable, so please be aware and distinguish carefully.</span></p><h2 id='switching-between-on-board-antenna-and-ipex-external-antenna'><span>Switching between On-board Antenna and IPEX External Antenna</span></h2><p><img src="./image/RF-Nano_Antenna2.png" referrerpolicy="no-referrer" alt="arduino_rf-nano_lib"><span>                                                           </span><img src="./image/RF-Nano_Antenna1.png" referrerpolicy="no-referrer" alt="arduino_rf-nano_lib"></p><p><span>						</span><span>On-board antenna</span><span>																						</span><span>External Antenna</span></p><p><strong><span>Note: If the capacitor in the blue area in the picture is horizontally soldered, the on-board antenna is being used. If it is vertically soldered, the external antenna is being used. To switch the antenna, simply modify the direction of the soldering of the capacitor in the blue area of the picture.</span></strong></p><p>&nbsp;</p><h2 id='pin-diagram'><span>Pin diagram</span></h2><p><img src="./image/rf-nano_pinout.png" referrerpolicy="no-referrer" alt="rf-nano_pinout"></p><h2 id='schematic-diagram'><span>Schematic diagram</span></h2><p><a href='schematic/rf-nano_sch_v3.0.pdf'><span>schematic diagram download </span></a></p><p><img src="./image/RF-Nano-schematic.png" referrerpolicy="no-referrer" alt="RF-Nano-schematic"></p><h2 id='mechanical-dimensions-labeling'><span>Mechanical dimensions labeling</span></h2><p><img src="./image/RF-Nano_Dimensional_drawing.png" referrerpolicy="no-referrer" alt="arduino_rf-nano_lib"></p><p><span>  </span></p><h2 id='arduino和nrf24l01the-chip-pin-connection-is-as-below'><span>Arduino和nRF24L01+The chip pin connection is as below</span></h2><figure><table><thead><tr><th><span>ATmega328P</span></th><th><span>nRF24L01+</span></th></tr></thead><tbody><tr><td><span>D7</span></td><td><span>CE</span></td></tr><tr><td><span>D8</span></td><td><span>CSN</span></td></tr><tr><td><span>D11</span></td><td><span>MOSI</span></td></tr><tr><td><span>D12</span></td><td><span>MISO</span></td></tr><tr><td><span>D13</span></td><td><span>SCK</span></td></tr></tbody></table></figure><p><strong><span>Note: The D7, D8, D11, D12, and D13 pins that have already been occupied by the RF-Nano cannot be reused.</span></strong></p><h2 id='ch340g-driver-installation'><span>CH340G Driver Installation</span></h2><p><a href='https://www.wch.cn/downloads/CH341SER_ZIP.html'><span>CH340G Driver Download Link</span></a></p><h2 id='rf24-library-installation'><span>RF24 Library Installation</span></h2><p><img src="./image/RF-Nano_Library_installation_1.png" referrerpolicy="no-referrer" alt="arduino_rf-nano_lib"></p><p><img src="./image/RF-Nano_Library_installation_2.png" referrerpolicy="no-referrer" alt="arduino_rf-nano_lib"></p><h3 id='selection-of-rf-nano-main-board'><span>Selection of RF-Nano main board</span></h3><p><img src="./image/ide_downloard.png" referrerpolicy="no-referrer" alt="ide_downloard"></p><h2 id='explanation-of-key-functions'><span>Explanation of Key Functions</span></h2><h3 id='basic-functions'><span>Basic Functions</span></h3><figure><table><thead><tr><th><span>Function Name</span></th><th><span>Description</span></th></tr></thead><tbody><tr><td><strong><a href='http://maniacbug.github.io/RF24/classRF24.html#a8cd165a822c8f77e10782c6729c5b088'><span>RF24</span></a></strong><span> (uint8_t _cepin, uint8_t _cspin)</span></td><td><span>The default values for CE pin and CSN pin are 9 and 10</span></td></tr><tr><td><span>void </span><strong><a href='http://maniacbug.github.io/RF24/classRF24.html#a9e720d303ad594de611a813c69244517'><span>begin</span></a></strong><span> (void)</span></td><td><span>Start wireless send-receive</span></td></tr><tr><td><span>void </span><strong><a href='http://maniacbug.github.io/RF24/classRF24.html#a30a2733a3889bdc331fe2d2f4f0f7b39'><span>startListening</span></a></strong><span> (void)</span></td><td><span>Begin listening on the specified channel</span></td></tr><tr><td><span>void </span><strong><a href='http://maniacbug.github.io/RF24/classRF24.html#a6f144d73fc447c8ac2d1a4166210fd88'><span>stopListening</span></a></strong><span> (void)</span></td><td><span>Stop listening.</span></td></tr><tr><td><span>bool </span><strong><a href='http://maniacbug.github.io/RF24/classRF24.html#a4cd4c198a47704db20b6b5cf0731cd58'><span> write</span></a></strong><span> (const void *buf, uint8_t len)</span></td><td><span>Send data to the specified channel</span></td></tr><tr><td><span>bool </span><strong><a href='http://maniacbug.github.io/RF24/classRF24.html#a127105eb7a3b351cfe777c1cec50627a'><span>available</span></a></strong><span> (void)</span></td><td><span>Check if data has been received</span></td></tr><tr><td><span>bool </span><strong><a href='http://maniacbug.github.io/RF24/classRF24.html#a391eb0016877ec7486936795aed3b5ee'><span>read</span></a></strong><span> (void *buf, uint8_t len)</span></td><td><span>Read data into a buffer</span></td></tr><tr><td><span>void </span><strong><a href='http://maniacbug.github.io/RF24/classRF24.html#a50c8e68ee840e1860a31dbdc83afbd77'><span>openWritingPipe</span></a></strong><span> (uint64_t address)</span></td><td><span>Open a sending channel to the address</span></td></tr><tr><td><span>void </span><strong><a href='http://maniacbug.github.io/RF24/classRF24.html#aa7e8523f86f9f8f20c274e0c89a5fd45'><span>openReadingPipe</span></a></strong><span> (uint8_t number, uint64_t address)</span></td><td><span>Open a data receiving channel</span></td></tr></tbody></table></figure><h3 id='configuration-function'><span>Configuration function</span></h3><figure><table><thead><tr><th><span>Function Name</span></th><th><span>Description</span></th></tr></thead><tbody><tr><td><span>void </span><strong><a href='http://maniacbug.github.io/RF24/classRF24.html#a4c6d3959c8320e64568395f4ef507aef'><span>setRetries</span></a></strong><span> (uint8_t delay, uint8_t count)</span></td><td><span>Set the retry time and the retry count</span></td></tr><tr><td><span>void </span><strong><a href='http://maniacbug.github.io/RF24/classRF24.html#a5e6e5a5f6c85d2638381cab2c0f3702e'><span>setChannel</span></a></strong><span> (uint8_t channel)</span></td><td><span>Set the communication channel range to 0~125. Setting it to 115 can avoid WiFi channels</span></td></tr><tr><td><span>void </span><strong><a href='http://maniacbug.github.io/RF24/classRF24.html#a343e5d23477181011dea030fafb1954f'><span>setPayloadSize</span></a></strong><span> (uint8_t size)</span></td><td><span>Set the static payload length for sending and receiving data</span></td></tr><tr><td><span>uint8_t </span><strong><a href='http://maniacbug.github.io/RF24/classRF24.html#a0aa0c7cbe3d38fef4722f3f1d2d6c5f1'><span>getPayloadSize</span></a></strong><span> (void)</span></td><td><span>Get the static payload length for sending and receiving data</span></td></tr><tr><td><span>uint8_t </span><strong><a href='http://maniacbug.github.io/RF24/classRF24.html#a65963ed8d8fd45f847e2f673995b85e1'><span>getDynamicPayloadSize</span></a></strong><span> (void)</span></td><td><span>Set the dynamic payload length for sending and receiving data</span></td></tr><tr><td><span>void </span><strong><a href='http://maniacbug.github.io/RF24/classRF24.html#abf8efced2ee9edbcc6510878b20edc1b'><span>enableAckPayload</span></a></strong><span> (void)</span></td><td><span>Enable automatic acknowledgement of data packets</span></td></tr><tr><td><span>void </span><strong><a href='http://maniacbug.github.io/RF24/classRF24.html#a443888504975d7441d6452a09d09a8fa'><span>enableDynamicPayloads</span></a></strong><span> (void)</span></td><td><span>Enable dynamic payload</span></td></tr><tr><td><span>bool </span><strong><a href='http://maniacbug.github.io/RF24/classRF24.html#a62846750b82682beb7593719eb60ed60'><span>isPVariant</span></a></strong><span> (void)</span></td><td><span>Determine whether the hardware is an nRF24L01+ or not.</span></td></tr><tr><td><span>void </span><strong><a href='http://maniacbug.github.io/RF24/classRF24.html#aec71746d59da978bcbb975167886a2cc'><span>setAutoAck</span></a></strong><span> (bool enable)</span></td><td><span>Enable automatic acknowledgement packet</span></td></tr><tr><td><span>void </span><strong><a href='http://maniacbug.github.io/RF24/classRF24.html#a60dba9e558f3620ab489af68ea3dea9c'><span>setAutoAck</span></a></strong><span> (uint8_t pipe, bool enable)</span></td><td><span>Enable or disable auto-acknowlede packets on a per pipeline basis</span></td></tr><tr><td><span>void </span><strong><a href='http://maniacbug.github.io/RF24/classRF24.html#ae14164610ab5af94cf44b2743daa8dc9'><span>setPALevel</span></a></strong><span> (</span><strong><a href='http://maniacbug.github.io/RF24/RF24_8h.html#a1e4cd0bea93e6b43422855fb0120aace'><span>rf24_pa_dbm_e</span></a></strong><span> level)</span></td><td><span>Set the transmission power level 0,1,2,3db</span></td></tr><tr><td><strong><a href='http://maniacbug.github.io/RF24/RF24_8h.html#a1e4cd0bea93e6b43422855fb0120aace'><span>rf24_pa_dbm_e</span></a></strong><span> </span><strong><a href='http://maniacbug.github.io/RF24/classRF24.html#ac53facef9c62aa82589cf9cc48913267'><span>getPALevel</span></a></strong><span> (void)</span></td><td><span>Get the transmission power</span></td></tr><tr><td><span>bool </span><strong><a href='http://maniacbug.github.io/RF24/classRF24.html#aeb9920e7a95699748b003c4a839b0814'><span> setDataRate</span></a></strong><span> (</span><strong><a href='http://maniacbug.github.io/RF24/RF24_8h.html#a82745de4aa1251b7561564b3ed1d6522'><span>rf24_datarate_e</span></a></strong><span> speed)</span></td><td><span>Set the data transmission rate</span></td></tr><tr><td><span>void </span><strong><a href='http://maniacbug.github.io/RF24/classRF24.html#a89f626fc4a58dd997153bcc0f8198b9e'><span>setCRCLength</span></a></strong><span> (</span><strong><a href='http://maniacbug.github.io/RF24/RF24_8h.html#adbe00719f3f835c82bd007081d040a7e'><span>rf24_crclength_e</span></a></strong><span> length)</span></td><td><span>Set the length of CRC check</span></td></tr><tr><td><strong><a href='http://maniacbug.github.io/RF24/RF24_8h.html#adbe00719f3f835c82bd007081d040a7e'><span>rf24_crclength_e</span></a></strong><span> </span><strong><a href='http://maniacbug.github.io/RF24/classRF24.html#aba4ca91b829afcd94a4c11e0343e3796'><span>getCRCLength</span></a></strong><span> (void)</span></td><td><span>Get the length of CRC check</span></td></tr><tr><td><span>void </span><strong><a href='http://maniacbug.github.io/RF24/classRF24.html#a5eacd9ecfbc19864801d714c292cf8be'><span>disableCRC</span></a></strong><span> (void)</span></td><td><span>Disable CRC check.</span></td></tr></tbody></table></figure><h3 id='advanced-operations'><span>Advanced operations</span></h3><figure><table><thead><tr><th><span>Function Name</span></th><th><span>Description</span></th></tr></thead><tbody><tr><td><span>void </span><strong><a href='http://maniacbug.github.io/RF24/classRF24.html#adc95213ed4c8569a90eb33122e16cea6'><span>printDetails</span></a></strong><span> (void)</span></td><td><span>Print all parameter configurations</span></td></tr><tr><td><span>void </span><strong><a href='http://maniacbug.github.io/RF24/classRF24.html#aa0a51923a09ba4f3478aba9be0f8a6a1'><span>powerDown</span></a><span> </span></strong><span>(void)</span></td><td><span>Enter power-down low-power mode</span></td></tr><tr><td><span>void </span><strong><span>[</span><a href='http://maniacbug.github.io/RF24/classRF24.html#a5cdaf47aa0edd6dca1b9a8bb7972a1a3'><span>powerUp</span></a></strong><span>(void)</span></td><td><span>Exit low-power mode</span></td></tr><tr><td><span>uint8_t </span><strong><a href='http://maniacbug.github.io/RF24/classRF24.html#a0aa0c7cbe3d38fef4722f3f1d2d6c5f1'><span>getPayloadSize</span></a></strong><span> (void)</span></td><td><span>Get the static payload length for transmission and reception</span></td></tr><tr><td><span>uint8_t </span><strong><a href='http://maniacbug.github.io/RF24/classRF24.html#a65963ed8d8fd45f847e2f673995b85e1'><span>getDynamicPayloadSize</span></a></strong><span> (void)</span></td><td><span>Set the dynamic payload length for transmission and reception</span></td></tr><tr><td><span>void </span><strong><a href='http://maniacbug.github.io/RF24/classRF24.html#abf8efced2ee9edbcc6510878b20edc1b'><span>enableAckPayload</span></a></strong><span> (void)</span></td><td><span>Enable automatic acknowledgement of data packets</span></td></tr><tr><td><span>void </span><strong><a href='http://maniacbug.github.io/RF24/classRF24.html#a443888504975d7441d6452a09d09a8fa'><span>enableDynamicPayloads</span></a></strong><span> (void)</span></td><td><span>Enable dynamic payload packets</span></td></tr><tr><td><span>bool </span><strong><a href='http://maniacbug.github.io/RF24/classRF24.html#a62846750b82682beb7593719eb60ed60'><span>isPVariant</span></a></strong><span> (void)</span></td><td><span>Determine whether the hardware is an nRF24L01+ or not.</span></td></tr><tr><td><span>void </span><strong><a href='http://maniacbug.github.io/RF24/classRF24.html#aec71746d59da978bcbb975167886a2cc'><span>setAutoAck</span></a></strong><span> (bool enable)</span></td><td><span>Enable automatic acknowledgement packets</span></td></tr><tr><td><span>void </span><strong><a href='http://maniacbug.github.io/RF24/classRF24.html#a60dba9e558f3620ab489af68ea3dea9c'><span>setAutoAck</span></a></strong><span> (uint8_t pipe, bool enable)</span></td><td><span>Enable or disable auto-acknowlede packets on a per pipeline basis</span></td></tr><tr><td><span>void </span><strong><a href='http://maniacbug.github.io/RF24/classRF24.html#ae14164610ab5af94cf44b2743daa8dc9'><span>setPALevel</span></a></strong><span> (</span><strong><a href='http://maniacbug.github.io/RF24/RF24_8h.html#a1e4cd0bea93e6b43422855fb0120aace'><span>rf24_pa_dbm_e</span></a></strong><span> level)</span></td><td><span>Set the transmission power level 0,1,2,3db</span></td></tr><tr><td><strong><a href='http://maniacbug.github.io/RF24/RF24_8h.html#a1e4cd0bea93e6b43422855fb0120aace'><span>rf24_pa_dbm_e</span></a></strong><span> </span><strong><a href='http://maniacbug.github.io/RF24/classRF24.html#ac53facef9c62aa82589cf9cc48913267'><span>getPALevel</span></a></strong><span> (void)</span></td><td><span>Get the transmission power</span></td></tr><tr><td><span>bool </span><strong><a href='http://maniacbug.github.io/RF24/classRF24.html#aeb9920e7a95699748b003c4a839b0814'><span> setDataRate</span></a></strong><span> (</span><strong><a href='http://maniacbug.github.io/RF24/RF24_8h.html#a82745de4aa1251b7561564b3ed1d6522'><span>rf24_datarate_e</span></a></strong><span> speed)</span></td><td><span>Set the data transmission rate</span></td></tr><tr><td><span>void </span><strong><a href='http://maniacbug.github.io/RF24/classRF24.html#a89f626fc4a58dd997153bcc0f8198b9e'><span>setCRCLength</span></a></strong><span> (</span><strong><a href='http://maniacbug.github.io/RF24/RF24_8h.html#adbe00719f3f835c82bd007081d040a7e'><span>rf24_crclength_e</span></a></strong><span> length)</span></td><td><span>Set the length of CRC check</span></td></tr><tr><td><strong><a href='http://maniacbug.github.io/RF24/RF24_8h.html#adbe00719f3f835c82bd007081d040a7e'><span>rf24_crclength_e</span></a></strong><span> </span><strong><a href='http://maniacbug.github.io/RF24/classRF24.html#aba4ca91b829afcd94a4c11e0343e3796'><span>getCRCLength</span></a></strong><span> (void)</span></td><td><span>Get the length of CRC check</span></td></tr><tr><td><span>void </span><strong><a href='http://maniacbug.github.io/RF24/classRF24.html#a5eacd9ecfbc19864801d714c292cf8be'><span>disableCRC</span></a></strong><span> (void)</span></td><td><span>Disable CRC check</span></td></tr></tbody></table></figure><p>&nbsp;</p><h3 id='nrf24l01si24r1-chip-wireless-communication-notes'><span>nRF24L01/Si24R1 chip wireless communication notes</span></h3><p><strong><span>Communication channel</span></strong></p><p><span>2.4G wireless communication begins at 2400MHz and takes every 1MHz increment as a frequency point, up to a maximum of 2525MHz (when setting the frequency, make sure to avoid WiFi interference). There are a total of 126 frequency values, which are called RF Channels by nrf2401. Similar to the issue of baud rate, do not modify them when sending or receiving data. Based on the FSK principle, for two modules to communicate normally, they must use the same carrier frequency, which means that the values of RF Channels on both sides must be the same.</span></p><p><span>The frequency interval of RF Channels is 1MHz. If the bandwidth exceeds 1MHz, adjacent RF Channels will overlap on the frequency band and interfere with each other, resulting in those channels being occupied.</span></p><p><span>When the baud rate of nRF2401 is 250Kbps or 1Mbps, the bandwidth can be less than 1MHz, which ensures that the 126 RF Channels do not interfere with each other. This means we have a total of 126 channels to use, which is perfect. However, when the baud rate is 2Mbps, the bandwidth cannot be less than 1MHz, so we can only make the bandwidth less than 2MHz, which means that we can only use half of the channels</span></p><p><strong><span>Address length</span></strong><span> </span></p><p><span>The address length of nRF24L01 is 3-5 bytes, and we can choose one among the 3/4/5-byte options</span></p><p><span>When nRF2401 is used as a PRX receiver, there can be up to six receiving addresses inside, and one or more receiving addresses can be enabled or disabled by configuration [enable separately] and [disable separately]. If multiple addresses are enabled, when PRX receives the data signal, the target address in the data will be compared with these addresses in turn. As long as one address matches, PRX regards the data as addressed to itself. The address that matches will be attached to the response data when PRX sends a reply</span></p><p><span>The six receiving addresses in nRF2401 are called data pipes, which everyone will undoubtedly come into contact with when using the library. The pipes are numbered from pipe0 to pipe5</span></p><p><span>The pipe address length can be set to 3/4/5 bytes, but these six pipes can only share one address length configuration and cannot use different address lengths separately.</span>
+<span>For pipe0, the address can be up to 5 bytes long, and the address value can be set arbitrarily. When 3/4-byte address length is used, only the lowest 3/4-byte of the 5-byte address is used, and the highest byte is ignored. For pipe1, it is the same as pipe0. For pipe2~pipe5, the address can be up to 5 bytes long, but only the lowest byte of the address value can be set arbitrarily, and the remaining high bytes can only be shared/follow the value configured in pipe1.</span></p><p><strong><span>Reception section</span></strong></p><p><span>The nrf2401 only has one RF module and can only receive one set of data at any given time.</span>
+<span>If you are using the 【multi-PTX &lt;-&gt; single-PRX with multiple pipes】scheme in Many-to-one communication,you need to be aware of overlapping transmission times.</span>
+<span>If two PTXs transmit data to the same PRX at the same time, even if their addresses are different, the two signals will interfere with each other and the PRX will not be able to decode either of their signals.</span></p><p><strong><span>Transmitter section</span></strong></p><p><span>Now let&#39;s talk about the PTX side. As mentioned earlier, when the PTX receives response data, it also needs to check the address，The PTX uses the data channel pipe0 to receive data, which is fixed and cannot be changed，Therefore, we must【enable】the pipe0 channel and【configure its address and address width】，Once again, it is important to emphasize that this address is not strictly the address of the PTX, but the address of the target PRX! In fact, the PTX does not have its own address.</span></p><p><span>Don&#39;t forget that when the PTX starts to send data, it also needs an address. According to common sense, since the address for pipe0 is configured, the PTX should know where to send the data when it transmits. However, it&#39;s not that simple: before sending data, the nRF2401 must be given a separate transmission address (TX_ADDR). In other words, in order for the PTX to correctly send and receive data, the target address must be configured twice for the PTX (i.e. write the address to two different places). One is for pipe0 and the other is for TX_ADDR, and the values at these two places must be the same.</span></p><h2 id='module-self-check-program'><span>Module self-check program</span></h2><pre class="md-fences md-end-block ty-contain-cm modeLoaded" spellcheck="false" lang="c" style="break-inside: unset;"><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap" lang="c"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 9.52344px; left: 8px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><span><span>​</span>x</span></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation" style=""><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-meta">#include &lt;SPI.h&gt;</span></span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-meta">#include &lt;Wire.h&gt;</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-meta">#include &lt;RF24.h&gt;</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-meta">#include &lt;printf.h&gt;</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="" cm-zwsp="">
+</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable">RF24</span> <span class="cm-def">Radio</span>(<span class="cm-number">7</span>,<span class="cm-number">8</span>);</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable-3">void</span> <span class="cm-def">setup</span>() {</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;<span class="cm-comment">// put your setup code here, to run once:</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;<span class="cm-variable">Serial</span>.<span class="cm-variable">begin</span>(<span class="cm-number">115200</span>);</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;<span class="cm-variable">printf_begin</span>();</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;<span class="cm-variable">Serial</span>.<span class="cm-variable">println</span>();</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;<span class="cm-variable">Serial</span>.<span class="cm-variable">println</span>(<span class="cm-variable">F</span>(<span class="cm-string">"RF_NANO v3.0 Test"</span>));</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;<span class="cm-comment">//</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;<span class="cm-comment">// Setup and configure rf radio</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;<span class="cm-comment">//</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;<span class="cm-variable">Radio</span>.<span class="cm-variable">begin</span>();</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;<span class="cm-variable">Radio</span>.<span class="cm-variable">setAddressWidth</span>(<span class="cm-number">5</span>);</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;<span class="cm-variable">Radio</span>.<span class="cm-variable">openReadingPipe</span>(<span class="cm-number">0</span>, <span class="cm-number">0x1212121212LL</span>);</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;<span class="cm-variable">Radio</span>.<span class="cm-variable">openReadingPipe</span>(<span class="cm-number">1</span>, <span class="cm-number">0x3434343431LL</span>);</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;<span class="cm-variable">Radio</span>.<span class="cm-variable">openReadingPipe</span>(<span class="cm-number">2</span>, <span class="cm-number">0x3434343432LL</span>);</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;<span class="cm-variable">Radio</span>.<span class="cm-variable">openReadingPipe</span>(<span class="cm-number">3</span>, <span class="cm-number">0x3434343433LL</span>);</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;<span class="cm-variable">Radio</span>.<span class="cm-variable">openReadingPipe</span>(<span class="cm-number">4</span>, <span class="cm-number">0x3434343434LL</span>);</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;<span class="cm-variable">Radio</span>.<span class="cm-variable">openReadingPipe</span>(<span class="cm-number">5</span>, <span class="cm-number">0x3434343435LL</span>);</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;<span class="cm-variable">Radio</span>.<span class="cm-variable">setChannel</span>(<span class="cm-number">115</span>); &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-comment">//115 band above WIFI signals</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;<span class="cm-variable">Radio</span>.<span class="cm-variable">setPALevel</span>(<span class="cm-variable">RF24_PA_MAX</span>); &nbsp; &nbsp;<span class="cm-comment">//MIN power low rage</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;<span class="cm-variable">Radio</span>.<span class="cm-variable">setDataRate</span>(<span class="cm-variable">RF24_1MBPS</span>) ; &nbsp; <span class="cm-comment">//Minimum speed</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;<span class="cm-variable">Serial</span>.<span class="cm-variable">println</span>(<span class="cm-string">"Setup Initialized"</span>);</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;<span class="cm-variable">Radio</span>.<span class="cm-variable">printDetails</span>();</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">}</span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 668px;"></div><div class="CodeMirror-gutters" style="display: none; height: 668px;"></div></div></div></pre><p>&nbsp;</p><h2 id='point-to-point-transmission-test'><span>Point-to-point transmission test</span></h2><p><strong><span>Send</span></strong></p><pre class="md-fences md-end-block ty-contain-cm modeLoaded" spellcheck="false" lang="c" style="break-inside: unset;"><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap" lang="c"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 9.52344px; left: 8px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation" style=""><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-meta">#include &lt;SPI.h&gt;</span></span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-meta">#include &lt;Wire.h&gt;</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-meta">#include &lt;RF24.h&gt;</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-meta">#include &lt;printf.h&gt;</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable">RF24</span> <span class="cm-def">SendRadio</span>(<span class="cm-number">7</span>,<span class="cm-number">8</span>);</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="" cm-zwsp="">
+</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable-3">int</span> <span class="cm-variable">value</span>;</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="" cm-zwsp="">
+</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable-3">void</span> <span class="cm-def">WriteData</span>()</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">{</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;<span class="cm-variable">value</span> <span class="cm-operator">=</span> <span class="cm-variable">random</span>(<span class="cm-number">255</span>); <span class="cm-comment">//随机一个0-255的值，并赋给value</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;<span class="cm-variable">SendRadio</span>.<span class="cm-variable">openWritingPipe</span>(<span class="cm-number">0xF0F0F0F066</span>);<span class="cm-comment">//Sends data on this 40-bit address</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;<span class="cm-variable">SendRadio</span>.<span class="cm-variable">write</span>(<span class="cm-operator">&amp;</span><span class="cm-variable">value</span>, <span class="cm-keyword">sizeof</span>(<span class="cm-variable">value</span>));<span class="cm-comment">//发送value的值</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;<span class="cm-variable">Serial</span>.<span class="cm-variable">print</span>(<span class="cm-string">"WriteData"</span>);</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;<span class="cm-variable">Serial</span>.<span class="cm-variable">print</span>(<span class="cm-string">"........."</span>);</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;<span class="cm-variable">Serial</span>.<span class="cm-variable">println</span>(<span class="cm-variable">value</span>);</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">}</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="" cm-zwsp="">
+</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable-3">void</span> <span class="cm-def">setup</span>() {</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;<span class="cm-comment">// put your setup code here, to run once:</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;<span class="cm-variable">Serial</span>.<span class="cm-variable">begin</span>(<span class="cm-number">115200</span>);</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;<span class="cm-variable">printf_begin</span>();</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;<span class="cm-variable">Serial</span>.<span class="cm-variable">println</span>(<span class="cm-variable">F</span>(<span class="cm-string">"RF-NANO v4.0 Send Test"</span>));</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="" cm-zwsp="">
+</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;<span class="cm-comment">//</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;<span class="cm-comment">// Setup and configure rf radio</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;<span class="cm-comment">//</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;<span class="cm-comment">// Get into standby mode</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="" cm-zwsp="">
+</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;<span class="cm-variable">SendRadio</span>.<span class="cm-variable">begin</span>();</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;<span class="cm-variable">SendRadio</span>.<span class="cm-variable">setAddressWidth</span>(<span class="cm-number">5</span>);</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;<span class="cm-variable">SendRadio</span>.<span class="cm-variable">openWritingPipe</span>(<span class="cm-number">0xF0F0F0F066LL</span>);</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;<span class="cm-variable">SendRadio</span>.<span class="cm-variable">setChannel</span>(<span class="cm-number">115</span>); &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="cm-comment">//115 band above WIFI signals</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;<span class="cm-variable">SendRadio</span>.<span class="cm-variable">setPALevel</span>(<span class="cm-variable">RF24_PA_MAX</span>); &nbsp; <span class="cm-comment">//MIN power low rage</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;<span class="cm-variable">SendRadio</span>.<span class="cm-variable">setDataRate</span>(<span class="cm-variable">RF24_1MBPS</span>) ; &nbsp;<span class="cm-comment">//Minimum speed</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;<span class="cm-variable">SendRadio</span>.<span class="cm-variable">stopListening</span>(); <span class="cm-comment">//Stop Receiving and start transminitng</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;<span class="cm-variable">Serial</span>.<span class="cm-variable">print</span>(<span class="cm-string">"Send Setup Initialized"</span>);</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;<span class="cm-variable">SendRadio</span>.<span class="cm-variable">printDetails</span>();</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;<span class="cm-variable">delay</span>(<span class="cm-number">500</span>);</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">}</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="" cm-zwsp="">
+</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable-3">void</span> <span class="cm-def">loop</span>() {</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;<span class="cm-variable">WriteData</span>();</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;<span class="cm-variable">delay</span>(<span class="cm-number">1000</span>);</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">}</span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 1037px;"></div><div class="CodeMirror-gutters" style="display: none; height: 1037px;"></div></div></div></pre><p><strong><span>Receive</span></strong></p><pre class="md-fences md-end-block ty-contain-cm modeLoaded" spellcheck="false" lang="c" style="break-inside: unset;"><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap" lang="c"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 9.52344px; left: 8px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation" style=""><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-meta">#include &lt;SPI.h&gt;</span></span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-meta">#include&lt;Wire.h&gt;</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-meta">#include &lt;RF24.h&gt;</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-meta">#include &lt;printf.h&gt;</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="" cm-zwsp="">
+</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable">RF24</span> <span class="cm-def">ReceiveRadio</span> (<span class="cm-number">7</span>, <span class="cm-number">8</span>);</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="" cm-zwsp="">
+</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable">byte</span> <span class="cm-variable">value</span>[<span class="cm-number">32</span>];</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="" cm-zwsp="">
+</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable-3">void</span> <span class="cm-def">ReadData</span>()</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">{</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;<span class="cm-variable-3">uint8_t</span> <span class="cm-variable">bytes</span>;</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;<span class="cm-keyword">if</span> (<span class="cm-variable">ReceiveRadio</span>.<span class="cm-variable">available</span>())</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">  {</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-keyword">while</span> (<span class="cm-variable">ReceiveRadio</span>.<span class="cm-variable">available</span>())</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;  { </span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp;<span class="cm-variable">bytes</span> <span class="cm-operator">=</span> <span class="cm-variable">ReceiveRadio</span>.<span class="cm-variable">getPayloadSize</span>();</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp;<span class="cm-variable">ReceiveRadio</span>.<span class="cm-variable">read</span>(<span class="cm-variable">value</span>, <span class="cm-variable">bytes</span>);<span class="cm-comment">//接收数据，并将数据赋值给value</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;  }</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-variable">Serial</span>.<span class="cm-variable">print</span>(<span class="cm-string">"ReadData"</span>);</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-variable">Serial</span>.<span class="cm-variable">print</span>(<span class="cm-string">"........."</span>);</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-variable">Serial</span>.<span class="cm-variable">println</span>(<span class="cm-variable">value</span>[<span class="cm-number">0</span>]);<span class="cm-comment">//打印所接收的值</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">  }</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">}</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="" cm-zwsp="">
+</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable-3">void</span> <span class="cm-def">setup</span>() {</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;<span class="cm-comment">// put your setup code here, to run once:</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;<span class="cm-variable">Serial</span>.<span class="cm-variable">begin</span>(<span class="cm-number">115200</span>);</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;<span class="cm-variable">printf_begin</span>();</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;<span class="cm-variable">Serial</span>.<span class="cm-variable">println</span>(<span class="cm-variable">F</span>(<span class="cm-string">"RF-NANO v4.0 Receive Test"</span>));</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="" cm-zwsp="">
+</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;<span class="cm-comment">//</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;<span class="cm-comment">// Setup and configure rf radio</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;<span class="cm-comment">//</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;<span class="cm-variable">ReceiveRadio</span>.<span class="cm-variable">begin</span>();</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;<span class="cm-variable">ReceiveRadio</span>.<span class="cm-variable">setAddressWidth</span>(<span class="cm-number">5</span>);</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;<span class="cm-variable">ReceiveRadio</span>.<span class="cm-variable">openReadingPipe</span>(<span class="cm-number">1</span>, <span class="cm-number">0xF0F0F0F066LL</span>);</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;<span class="cm-variable">ReceiveRadio</span>.<span class="cm-variable">setChannel</span>(<span class="cm-number">115</span>); &nbsp;<span class="cm-comment">//115 band above WIFI signals</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;<span class="cm-variable">ReceiveRadio</span>.<span class="cm-variable">setPALevel</span>(<span class="cm-variable">RF24_PA_MAX</span>); <span class="cm-comment">//MIN power low rage</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;<span class="cm-variable">ReceiveRadio</span>.<span class="cm-variable">setDataRate</span>(<span class="cm-variable">RF24_1MBPS</span>) ; &nbsp;<span class="cm-comment">//Minimum speed</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;<span class="cm-variable">ReceiveRadio</span>.<span class="cm-variable">startListening</span>();</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;<span class="cm-variable">Serial</span>.<span class="cm-variable">println</span>(<span class="cm-string">"Receive Setup Initialized"</span>);</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;<span class="cm-variable">ReceiveRadio</span>.<span class="cm-variable">printDetails</span>();</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;<span class="cm-variable">delay</span>(<span class="cm-number">500</span>);</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">}</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="" cm-zwsp="">
+</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable-3">void</span> <span class="cm-def">loop</span>() {</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;<span class="cm-variable">ReadData</span>();</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">}</span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 1129px;"></div><div class="CodeMirror-gutters" style="display: none; height: 1129px;"></div></div></div></pre><p>&nbsp;</p><h2 id='one-to-many-test'><span>one-to-many test</span></h2><p><img src="./image/muilt_demo.png" referrerpolicy="no-referrer" alt="muilt_demo"></p><p><span>Method 1: Same channel, different address</span></p><p>&nbsp;</p><p><span>Method 2: Same address, different channel</span></p><h3 id='support-for-visual-programming-software'><span>Support for visual programming software.</span></h3><h4 id='mixly'><span>Mixly</span></h4><h4 id='magicblock'><span>MagicBlock</span></h4><h4 id='mblock5'><span>Mblock5</span></h4><h4 id='mind'><span>Mind+</span></h4><p><span>In development......</span></p><h2 id='contact-us'><span>Contact us</span></h2><p><strong><span>Technology + cooperation</span></strong><span>  wechat: jundi0808(</span><a href='mailto:ken@emakefun.com' target='_blank' class='url'>ken@emakefun.com</a><span>)</span></p><p>&nbsp;</p></div></div>
+</body>
+</html>
