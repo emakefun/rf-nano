@@ -26,11 +26,11 @@
 
 ## Upgrade points for the version
 
-Comparison of product parameters between Nano V3.0, RF-Nano V1.0, and RF-Nano V3.0
+Comparison of product parameters between Nano V3.0, RF-Nano V1.0 V2.0, and RF-Nano V3.0
 
-|  Function  | NANO   3.0 | RF-NANO (Old version V1.0) |RF-NANO (New version V3.0)  |
+|  Function  | NANO   3.0 | RF-NANO (Old version V1.0 V2.0) |RF-NANO (New version V3.0)  |
 |  :--:  | :--:  |:--:  |:--:  |
-| product picture | <img src="./image/nano3.0.png"  style="zoom: 50%;" /> | <img src="./image/rf-nano_v1.0.png"  style="zoom: 56%;" /> | <img src="./image/rf-nano.png" style="zoom:56%;"/> |
+| product picture | <img src="./image/nano3.0.png"  style="zoom: 50%;" /> | <img src="./image/rf-nano_v1.0.png"  style="zoom: 56%;" /><img src="./image/rf-nano_v2.0.png"  style="zoom: 60%;" /> | <img src="./image/rf-nano.png" style="zoom:56%;"/> |
 | Main control chip | ATmega328P-AU | ATmega328P-MU | ATmega328PB-AU |
 | USB interface | Mini USB | Micro USB |Type-C  |
 | Size  | 18mm x 45mm | 19mm x 49mm |18mm x 48mm  |
@@ -345,14 +345,6 @@ Method 1: Same channel, different address
 Method 2: Same address, different channel
 
 ### Support for visual programming software.
-
-#### Mixly
-
-#### MagicBlock
-
-#### Mblock5
-
-#### Mind+
 
 In development......
 
